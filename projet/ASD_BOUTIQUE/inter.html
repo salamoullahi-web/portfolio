@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maillot Argentine - ASD Sportwear</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>ASD Sportwear</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="produits.html">Produits</a></li>
+        <li><a href="panier.html">Panier</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="detail">
+
+    <p class="fil"><a href="produits.html">&larr; Retour aux produits</a></p>
+
+    <div class="detail-contenu">
+
+      <figure class="detail-image">
+        <img src="argentine.jpg" alt="Maillot de l'équipe nationale d'Argentine">
+      </figure>
+
+      <div class="detail-infos">
+        <h2>Maillot Argentine</h2>
+        <p class="prix">8.000 FCFA</p>
+
+        <p>
+          Maillot de l'équipe nationale d'Argentine aux célèbres rayures
+          bleu ciel et blanches. Léger, respirant et confortable.
+        </p>
+
+        <h3>Caractéristiques</h3>
+        <ul>
+          <li>Équipe : Argentine</li>
+          <li>Matière : polyester</li>
+          <li>Saison : 2026</li>
+          <li>Lavage : 30 °C maximum</li>
+        </ul>
+
+        <form action="panier.html" method="get">
+
+          <p>
+            <label for="taille">Taille</label>
+            <select id="taille" name="taille">
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+            </select>
+          </p>
+
+          <p>
+            <label for="quantite">Quantité</label>
+            <input type="number" id="quantite" name="quantite" min="1" max="10" value="1">
+          </p>
+
+          <p>
+            <button type="submit">Ajouter au panier</button>
+          </p>
+
+        </form>
+
+        <a class="bouton bouton-whatsapp" href="https://wa.me/221775864880?text=Bonjour%2C%20je%20veux%20commander%20le%20maillot%20Argentine">Commander sur WhatsApp</a>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer>
+    <p><strong>ASD Sportwear</strong></p>
+    <p>Louga, en face de la Gouvernance</p>
+    <p>Téléphone : <a href="tel:+221775864880">77 586 48 80</a></p>
+    <p>&copy; 2026 ASD Sportwear. Tous droits réservés.</p>
+  </footer>
+
+</body>
+</html>

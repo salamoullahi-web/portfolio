@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact - ASD Sportwear</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>ASD Sportwear</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="produits.html">Produits</a></li>
+        <li><a href="panier.html">Panier</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contact">
+    <h2>Contactez-nous</h2>
+
+    <div class="contact-infos">
+      <p><strong>Adresse :</strong> Louga, en face de la Gouvernance</p>
+      <p><strong>Téléphone :</strong> <a href="tel:+221775864880">77 586 48 80</a></p>
+      <a class="bouton bouton-whatsapp" href="https://wa.me/221775864880">Écrire sur WhatsApp</a>
+    </div>
+
+    <form action="#" method="post">
+
+      <p>
+        <label for="nom">Nom</label>
+        <input type="text" id="nom" name="nom" required>
+      </p>
+
+      <p>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </p>
+
+      <p>
+        <label for="sujet">Sujet</label>
+        <select id="sujet" name="sujet">
+          <option value="commande">Question sur une commande</option>
+          <option value="produit">Question sur un produit</option>
+          <option value="livraison">Livraison</option>
+          <option value="autre">Autre</option>
+        </select>
+      </p>
+
+      <p>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+      </p>
+
+      <p>
+        <input type="checkbox" id="offres" name="offres">
+        <label for="offres">Je veux recevoir les offres</label>
+      </p>
+
+      <p>
+        <button type="submit">Envoyer</button>
+      </p>
+
+    </form>
+  </main>
+
+  <footer>
+    <p><strong>ASD Sportwear</strong></p>
+    <p>Louga, en face de la Gouvernance</p>
+    <p>Téléphone : <a href="tel:+221775864880">77 586 48 80</a></p>
+    <p> 2026 ASD Sportwear. Tous droits réservés.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+        <html lang="fr">
+<head>
+       <meta charset="utf-8">
+       <!-- Pour que le site s'adapte bien au téléphone -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+     <!-- Titre qui s'affiche dans l'onglet du navigateur et sur Google -->
+ <title>ASD Sportwear – Maillots, tableaux, flocage et t-shirts otaku à Louga</title>
+   <!-- Polices Google : Unbounded (titres), Manrope (textes), Oswald (flocage) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Manrope:wght@400;500;700&family=Barlow+Condensed:wght@600;700&family=Oswald:wght@600;700&family=Bebas+Neue&family=Teko:wght@600;700&family=Saira+Condensed:wght@600;700&family=Anton&display=swap" rel="stylesheet">
+    <!-- Lien vers le fichier de style (couleurs, animations) -->
+         <link rel="stylesheet" href="style.css">
+</head>
+<body>
+               <!-- ========== MENU DU HAUT ========== -->
+
+<nav>
+        <a class="logo" href="#top">ASD<span> Sportwear</span></a>
+  <ul>
+                    <!-- Chaque lien mène à une section grâce à son id (#apropos, #univers...) -->
+        <li><a href="#apropos">À propos</a></li><li><a href="#univers">Univers</a></li><li><a href="#boutique">Boutique</a></li><li><a href="#flocage">Flocage</a></li><li><a href="#contact">Contact</a></li>
+</ul>
+         <!-- Bouton qui lance l'appel sur téléphone -->
+        <a class="btn" href="tel:+221775864880">Appeler</a>
+</nav>
+                   <!-- ========== ACCUEIL (titre + bannière) ========== -->
+      <header id="top" class="hero">
+ <div>
+            <h1>ASD<br>Sportwear</h1>
+       <p class="lead">Maillots originaux, tableaux personnalisés, flocage, sublimation et t-shirts otaku. Tout pour porter vos couleurs à Louga.</p>
+   <div class="cta"><a class="btn" href="#boutique">Voir la boutique</a><a class="btn ghost" href="#contact">Nous trouver</a></div>
+  </div>
+</div>
+                   <!-- Photo de la bannière : le script.js met la photo dedans (id="ban") -->
+     <div class="glass bwrap"><div class="bimg"><img src="image/banniere.jpg" class="ban" id="ban" alt="Collection de maillots originaux ASD Sportwear"></div></div>
+ </header>
+  <main>
+                           <!-- ========== À PROPOS ========== -->
+
+ <section id="apropos">
+     <h2 class="rv">À propos d’ASD Sportwear</h2>
+           <div class="about">
+                              <!-- Colonne de gauche : la description -->
+<div class="glass ab-text rv">
+<p>ASD Sportwear est une boutique de sport et de personnalisation installée à Louga. Nous aidons les supporters, les clubs et les passionnés à porter leurs couleurs et à créer des articles qui leur ressemblent.</p>
+<p>Chez nous, vous trouvez des maillots originaux d’équipes nationales et de clubs, le flocage avec le nom et le numéro de votre choix, la sublimation sur t-shirt, des tableaux personnalisés et des t-shirts otaku.</p>
+<p>Notre rôle : vous proposer les articles que vous aimez et vous accompagner dans la personnalisation, de votre idée jusqu’à l’article terminé.</p>
+<div class="facts"><span class="chip on">Créée en 2025</span><span class="chip on">Louga, Sénégal</span></div>
+</div>
+                                <!-- Colonne de droite : la carte du fondateur -->
+<div class="glass founder rv">
+        <!-- Ta photo : elle doit être dans le dossier images sous le nom fondateur.jpg -->
+  <img class="avatar" src="images/fondateur.jpg" alt="Abdou Salam Diakhate, fondateur d’ASD Sportwear">
+                     <small>Fondateur</small>
+                   <h3>Abdou Salam Diakhate</h3>
+<p>Jeune entrepreneur, il a créé ASD Sportwear en 2025 pour mettre le sport, la mode et la personnalisation à la portée de tous à Louga.</p>
+ </div>
+</div>
+   </section>
+                    <!-- ========== NOTRE UNIVERS (les 5 cartes) ========== -->
+           <section id="univers">
+      <h2 class="rv">Notre univers</h2>
+<p class="sub rv">Quatre savoir-faire sous un même toit, pour les supporters, les clubs et les fans de manga.</p>
+             <div class="cats">
+               <!-- Pour ajouter une carte : copie une ligne et change l'emoji, le titre et le texte -->
+  <div class="glass cat rv"><div class="ic">👕</div><h3>Maillots originaux</h3><p>Équipes nationales internationales et grands clubs.</p></div>
+ <div class="glass cat rv"><div class="ic">🖼️</div><h3>Tableaux personnalisés</h3><p>Votre photo, votre idole, votre famille sous cadre.</p></div>
+ <div class="glass cat rv"><div class="ic">✍️</div><h3>Flocage</h3><p>Nom et numéro posés sur le maillot de votre choix.</p></div>
+ <div class="glass cat rv"><div class="ic">🎨</div><h3>Sublimation</h3><p>Votre design ou votre logo imprimé en couleurs sur t-shirt.</p></div>
+ <div class="glass cat rv"><div class="ic">⛩️</div><h3>T-shirts otaku</h3><p>Des designs manga et japonais pour les passionnés.</p></div>
+   </div> 
+</section>
+                        <!-- ========== BOUTIQUE ========== -->
+         <section id="boutique">
+    <h2 class="rv">La boutique</h2>
+  <p class="sub rv">Choisissez un article, puis demandez le prix et la disponibilité sur WhatsApp.</p>
+        <!-- Boutons de filtre. data-f doit être égal à la catégorie "c" dans script.js -->
+
+   <div class="tabs rv" id="tabs">
+
+       <button class="tab" aria-pressed="true" data-f="all">Tout</button>
+
+      <button class="tab" aria-pressed="false" data-f="Maillot">Maillots</button>
+
+     <button class="tab" aria-pressed="false" data-f="Tableau">Tableaux</button>
+
+   <button class="tab" aria-pressed="false" data-f="Otaku.jpg">T-shirts otaku</button>
+
+   <button class="tab" aria-pressed="false" data-f="Flocage">Flocage</button>
+
+ <button class="tab" aria-pressed="false" data-f="Sublimation">Sublimation</button>
+</div>
+                   <!-- Les cartes produits sont créées par script.js dans cette zone -->
+      <div class="grid" id="grid"></div>
+</section>
+                      <!-- ========== CRÉEZ VOTRE FLOCAGE ========== -->
+
+         <section id="flocage">
+    <h2 class="rv">Créez votre flocage</h2>
+  <p class="sub rv">Tapez votre nom et votre numéro, l’aperçu se met à jour en direct.</p>
+<div class="glass flock rv">
+<div>
+      <label for="nm">Nom sur le maillot</label><input id="nm" maxlength="12" value="LOUGA" autocomplete="off">
+     <label for="no">Numéro</label><input id="no" maxlength="2" value="10" inputmode="numeric" autocomplete="off">
+     <label>Couleur du maillot</label>
+         <!-- Les ronds de couleur sont créés par script.js -->
+     <div class="sw" id="sw"></div>
+       <!-- Ce lien ouvre WhatsApp avec le nom et le numéro déjà écrits -->
+<p style="margin:20px 0"><a class="btn" id="fl" href="#">Commander ce flocage</a></p>
+</div>
+         <!-- Le dessin du maillot est créé par script.js dans cette zone -->
+<div class="view" id="fv"></div>
+  </div>
+</section>
+                       <!-- ========== CONTACT ========== -->
+         <section id="contact">
+   <h2 class="rv">Nous trouver</h2>
+   <p class="sub rv">Passez à la boutique ou écrivez-nous, on répond vite.</p>
+   <div class="contact">
+   <div class="glass rv"><h3><span class="ci pin">📍</span> Adresse</h3><p class="gl">Louga, en face de la Gouvernance.</p></div>
+<div class="glass rv"><h3><span class="ci tel">📞</span> Téléphone</h3><p><a href="tel:+221775864880">77 586 48 80</a></p></div>
+<div class="glass rv"><h3><span class="ci mail">✉️</span> Email</h3><p><a href="mailto:salamoullahi2@gmail.com">salamoullahi2@gmail.com</a></p></div>
+   </div>
+  </section>
+</main>
+              <!-- Fenêtre qui agrandit une photo quand on clique dessus -->
+<div class="lb" id="lb"><img id="lbi" alt=""></div>
+       <footer>© 2026 ASD Sportwear · Louga, Sénégal</footer>
+             <!-- Bouton WhatsApp vert, toujours visible en bas à droite -->
+<a class="wa" href="https://wa.me/221775864880?text=Bonjour%20ASD%20Sportwear" aria-label="Écrire sur WhatsApp">💬</a>
+<!-- Le fichier script.js doit rester ici, tout en bas, juste avant </body> -->
+<script src="script.js"></script>
+</body>
+</html>

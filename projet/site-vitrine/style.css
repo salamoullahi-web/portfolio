@@ -1,0 +1,401 @@
+/* ============ COULEURS DU SITE ============
+   Pour changer les couleurs, change seulement ces valeurs. */
+:root{
+  --bg1:#030408;          /* fond noir profond (haut) */
+  --bg2:#070a14;          /* fond (milieu) */
+  --bg3:#0a1230;          /* fond bleu nuit (bas) */
+  --ink:#f2f6ff;          /* couleur du texte principal */
+  --soft:#9fb0d0;         /* couleur du texte secondaire */
+  --glass:rgba(255,255,255,.05);   /* fond des cartes en verre */
+  --edge:rgba(40,130,255,.45);     /* bordure bleue des cartes */
+  --accent:#1f6bff;       /* BLEU ÉLECTRIQUE */
+  --accent2:#ff1f4b;      /* ROUGE NÉON */
+  --silver:#cfe0ff;       /* bleu très clair pour les titres */
+  --shadow:rgba(0,0,0,.6);         /* couleur des ombres */
+  box-sizing:border-box;
+             /* évite que le contenu passe sous l'encoche du téléphone */
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box;margin:0}              /* enlève les marges par défaut */
+html{scroll-behavior:smooth;scroll-padding-top:80px}  /* défilement doux vers les sections */
+
+                     /* ============ FOND DE LA PAGE ============ */
+body{
+  font-family:Manrope,system-ui,sans-serif;
+  color:var(--ink);
+  /* deux halos (bleu en haut à gauche, rouge en bas à droite) + dégradé noir/bleu nuit */
+  background:
+    radial-gradient(circle at 15% 10%,rgba(20,100,255,.24),transparent 40%),
+    radial-gradient(circle at 90% 85%,rgba(255,30,70,.16),transparent 45%),
+    linear-gradient(160deg,var(--bg1),var(--bg2) 55%,var(--bg3)) fixed;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+main,header,footer{position:relative;z-index:1}
+
+                     /* ============ CARTES EN VERRE (effet glace) ============ */
+.glass{
+  background:var(--glass);
+  border:1px solid var(--edge);
+  backdrop-filter:blur(16px) saturate(1.4);       /* flou derrière la carte */
+  -webkit-backdrop-filter:blur(16px) saturate(1.4);
+  box-shadow:0 12px 40px var(--shadow),inset 0 1px 0 rgba(120,170,255,.22);
+  border-radius:22px;
+}
+
+                         /* ============ MENU DU HAUT ============ */
+nav{
+  position:sticky;top:0;z-index:20;               /* reste collé en haut quand on descend */
+  display:flex;justify-content:space-between;
+  align-items:center;gap:12px;
+  padding:12px 5vw;
+  background:rgba(3,4,8,.85);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--edge);
+}
+.logo{font-family:Unbounded,sans-serif;
+font-weight:900;font-size:1.1rem;
+color:var(--ink);text-decoration:none;
+letter-spacing:.02em}
+.logo span{color:var(--accent2)}                  /* "Sportwear" en rouge néon */
+nav ul{display:flex;
+gap:22px;
+list-style:none;
+padding:0;
+overflow-x:auto}
+nav a{color:var(--ink);
+text-decoration:none;
+font-weight:700;
+font-size:.92rem;
+white-space:nowrap}
+nav ul a:hover{color:var(--accent)}
+
+                          /* ============ BOUTONS ============ */
+.btn{
+  display:inline-block;
+  padding:14px 26px;
+  border-radius:999px;
+  font-weight:700;
+  text-decoration:none;color:#fff;
+  background:linear-gradient(120deg,var(--accent),var(--accent2));   /* bleu vers rouge */
+  box-shadow:0 0 22px rgba(31,107,255,.45);       /* lueur bleue */
+  transition:transform .2s,box-shadow .2s;
+  border:0;cursor:pointer;
+  font-family:inherit;
+  font-size:1rem;
+}
+.btn:hover{transform:translateY(-3px) scale(1.03);
+box-shadow:0 14px 30px var(--shadow)}  /* animation au survol */
+.btn.ghost{background:var(--glass);
+color:var(--ink);
+border:1px solid var(--edge)}      /* bouton transparent */
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--accent);
+outline-offset:3px}
+
+                            /* ============ ACCUEIL ============ */
+.hero{min-height:92vh;display:grid;
+    grid-template-columns:1.1fr .9fr;
+    align-items:center;gap:30px;
+    padding:60px 5vw}
+.hero h1{
+  font-family:Unbounded,sans-serif;
+  font-weight:900;
+  font-size:clamp(2.6rem,7vw,5.6rem);
+  line-height:1;letter-spacing:-.02em;
+  /* texte rempli avec un dégradé qui brille et bouge */
+  background:linear-gradient(100deg,var(--silver) 20%,var(--accent) 45%,#fff 50%,var(--accent2) 55%,var(--silver) 80%);
+  background-size:250% 100%;
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  filter:drop-shadow(0 0 18px rgba(31,107,255,.5));   /* lueur bleue */
+  animation:shine 5s linear infinite,rise 1s cubic-bezier(.2,.8,.2,1) both;
+}
+@keyframes shine{from{background-position:100% 0}to{background-position:-100% 0}}   /* reflet qui passe */
+@keyframes rise{from{opacity:0;transform:translateY(40px)}}                          /* apparition par le bas */
+.hero p.lead{font-size:1.2rem;color:var(--soft);max-width:34ch;margin:20px 0 28px;animation:rise 1s .2s both}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap;animation:rise 1s .4s both}
+
+                         /* Cadre de la bannière */
+.bwrap{padding:10px;
+    animation:rise 1.2s .3s both}
+.bimg{position:relative;overflow:hidden;
+    border-radius:16px}
+.ban{width:100%;display:block;aspect-ratio:735/575;
+    object-fit:cover;
+    animation:kb 14s ease-in-out infinite alternate}  /* zoom très lent */
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.07)}}
+.bimg::after{   /* reflet lumineux qui traverse la bannière */
+  content:"";position:absolute;top:0;left:-70%;width:40%;height:100%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);
+  transform:skewX(-20deg);animation:sweep 6s 1.5s ease-in-out infinite;
+}
+@keyframes sweep{0%{left:-70%}35%,100%{left:140%}}
+
+                    /* ============ TITRES DES SECTIONS ============ */
+section{padding:80px 5vw}
+h2{font-family:Unbounded,sans-serif;
+    font-weight:700;font-size:clamp(1.7rem,4vw,2.6rem);
+    margin-bottom:10px}
+.sub{color:var(--soft);
+    max-width:60ch;
+    margin-bottom:34px}
+
+                       /* ============ À PROPOS ============ */
+.about{display:grid;
+    grid-template-columns:1.4fr 1fr;
+    gap:22px;margin-top:24px}
+.ab-text,.founder{padding:30px}
+.ab-text p{margin-bottom:14px;
+    color:var(--soft);
+    max-width:62ch}
+.facts{display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:18px}
+.chip{padding:8px 14px;
+    border-radius:999px;
+    border:1px solid var(--edge);
+    background:var(--glass);
+    color:var(--ink);
+    font-size:.88rem;
+    font-weight:700}
+.chip.on{background:linear-gradient(120deg,var(--accent),var(--accent2));color:#fff}   /* étiquettes "Créée en 2025" */
+.founder{text-align:center}
+.founder small{color:var(--silver);
+    display:block;
+    margin-top:14px}
+.founder h3{font-family:Unbounded,sans-serif;
+    font-size:1.2rem;
+    margin:6px 0 10px}
+.founder p{color:var(--soft);font-size:.95rem}
+/* Photo ronde du fondateur. Pour recentrer le visage, change object-position (ex : 50% 30%) */
+img.avatar{display:block;
+    margin:0 auto;
+    width:140px;
+    height:140px;border-radius:50%;
+    object-fit:cover;
+    object-position:50% 50%;
+    border:3px solid var(--accent);padding:0}
+               /* Si tu remets les lettres AS à la place de la photo */
+.avatar{box-shadow:0 0 26px rgba(31,107,255,.5);animation:pulse2 3s ease-in-out infinite}   /* halo qui pulse */
+@keyframes pulse2{50%{box-shadow:0 0 40px rgba(255,31,75,.55)}}
+
+                    /* ============ NOTRE UNIVERS ============ */
+.cats{display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.cat{padding:28px;
+    transition:transform .3s}
+.cat:hover{transform:translateY(-8px) rotate(-.6deg)}
+.cat h3{color:var(--silver);
+    font-family:Unbounded,sans-serif;
+    font-size:1.05rem;
+    margin:12px 0 6px}
+.cat p{color:var(--soft);
+    font-size:.95rem}
+.cat .ic{font-size:2.2rem}
+
+                      /* ============ BOUTIQUE ============ */
+.tabs{display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:28px}
+.tab{padding:10px 20px;
+    border-radius:999px;
+    border:1px solid var(--edge);
+    background:var(--glass);
+    color:var(--ink);
+    font-weight:700;
+    cursor:pointer;
+    font-family:inherit;
+    transition:.2s}
+.tab[aria-pressed="true"]{background:linear-gradient(120deg,var(--accent),var(--accent2));color:#fff}  /* filtre actif */
+.grid{display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+    gap:22px}
+.card{padding:18px;
+    text-align:center;
+    transition:transform .3s,opacity .4s;
+    animation:pop .5s both}
+@keyframes pop{from{opacity:0;transform:scale(.9)}}      /* la carte apparaît en grossissant */
+.card:hover{transform:translateY(-8px)}
+.card:hover,.cat:hover{box-shadow:0 0 0 1px var(--accent2),0 0 30px rgba(255,31,75,.45)}   /* lueur rouge au survol */
+.card .pic{
+  height:300px;
+  cursor:zoom-in;
+  display:grid;
+  place-items:center;
+  border-radius:16px;
+  background:radial-gradient(circle at 50% 30%,rgba(40,110,255,.2),rgba(40,110,255,0) 70%);
+  margin-bottom:12px;
+  position:relative;
+  overflow:hidden;
+}
+.card .pic img{width:100%;
+    height:100%;object-fit:cover;
+    border-radius:16px;
+    transition:transform .6s}
+.card:hover .pic img{transform:scale(1.07)}              /* zoom de la photo au survol */
+.card .pic::after{   /* reflet qui traverse la photo au survol */
+  content:"";
+  position:absolute;
+  top:0;left:-80%;width:50%;
+  height:100%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.7),transparent);
+  transform:skewX(-20deg);
+  transition:left .7s;
+}
+.card:hover .pic::after{left:130%}
+.card h3{font-size:1rem;font-weight:700}
+.card small{color:var(--silver);display:block;margin-bottom:12px}
+.card .btn{padding:9px 18px;font-size:.88rem}
+
+           /* ============ FENÊTRE D'AGRANDISSEMENT DES PHOTOS ============ */
+.lb{position:fixed;
+    inset:0;z-index:50;
+    background:rgba(5,25,45,.85);
+    backdrop-filter:blur(8px);
+    display:none;
+    place-items:center;padding:20px;
+    cursor:zoom-out}
+.lb.on{display:grid}                       /* visible quand la classe "on" est ajoutée */
+.lb img{max-width:100%;
+    max-height:90vh;
+    border-radius:16px;
+    box-shadow:0 20px 60px rgba(0,0,0,.5)}
+
+                     /* ============ CRÉEZ VOTRE FLOCAGE ============ */
+.flock{display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+    align-items:center;
+    padding:36px}
+.flock label{display:block;
+    font-weight:700;
+    margin:14px 0 6px}
+.flock input{width:100%;
+    padding:13px 16px;
+    border-radius:14px;
+    border:1px solid var(--edge);
+    background:var(--glass);
+    color:var(--ink);
+    font:inherit;
+    font-size:1.05rem}
+.flock .view{display:grid;
+    place-items:center}
+.flock .view svg{width:min(340px,92%);
+    filter:drop-shadow(0 18px 24px rgba(0,0,0,.45))}   /* taille et ombre du maillot */
+.sw{display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:6px}                 /* ronds de couleur */
+.sw button{width:36px;
+    height:36px;
+    border-radius:50%;
+    border:2px solid var(--edge);
+    cursor:pointer}
+.sw button.on{outline:3px solid var(--accent2);
+    outline-offset:3px}       /* couleur choisie */
+
+                            /* ============ CONTACT ============ */
+@property --ang{syntax:"<angle>";initial-value:0deg;inherits:false}      /* angle qui tourne autour des cartes */
+.contact{display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px}
+.contact .glass{padding:26px;
+    position:relative;
+    overflow:hidden;
+    transition:transform .3s}
+.contact .glass:hover{transform:translateY(-6px)}
+.contact .glass::before{   /* trait lumineux bleu et rouge qui tourne autour de la carte */
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  padding:2px;
+  background:conic-gradient(from var(--ang),transparent 55%,var(--accent),var(--accent2),transparent);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  mask-composite:exclude;
+  animation:spin 4s linear infinite;
+  pointer-events:none;
+}
+@keyframes spin{to{--ang:360deg}}
+.contact h3{font-family:Unbounded,sans-serif;
+    font-size:1rem;
+    margin-bottom:8px}
+                               /* Icônes animées */
+.ci{display:inline-block;
+    font-size:1.4rem}
+.pin{animation:hop 1.6s ease-in-out infinite}                            /* 📍 saute */
+.tel{animation:ring 2.6s infinite;transform-origin:50% 60%}              /* 📞 sonne */
+.mail{animation:fly 3s ease-in-out infinite}                             /* ✉️ flotte */
+@keyframes hop{0%,100%{transform:translateY(0)}40%{transform:translateY(-9px)}60%{transform:translateY(0)}}
+@keyframes ring{0%,45%,100%{transform:rotate(0)}5%{transform:rotate(-20deg)}10%{transform:rotate(20deg)}15%{transform:rotate(-16deg)}20%{transform:rotate(16deg)}25%{transform:rotate(-8deg)}30%{transform:rotate(0)}}
+@keyframes fly{50%{transform:translate(5px,-7px) rotate(-10deg)}}
+        /* Texte (adresse, téléphone, email) avec dégradé bleu/rouge qui défile */
+.contact a,.gl{
+  font-size:1.1rem;
+  font-weight:700;
+  word-break:break-all;
+  text-decoration:none;
+  background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent));
+  background-size:200% 100%;
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  animation:flow 3s linear infinite;
+}
+@keyframes flow{to{background-position:-200% 0}}
+
+                /* ============ BAS DE PAGE ET BOUTON WHATSAPP ============ */
+footer{text-align:center;
+    padding:40px 5vw;
+    color:var(--soft);
+    font-size:.9rem}
+.wa{
+  position:fixed;
+  right:18px;
+  bottom:calc(18px + env(safe-area-inset-bottom,0px));
+  z-index:30;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  background:#25d366;                /* vert WhatsApp */
+  display:grid;
+  place-items:center;
+  box-shadow:0 10px 26px rgba(0,0,0,.3);
+  animation:pulse 2s infinite;
+  text-decoration:none;
+  font-size:1.8rem;
+}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.6)}100%{box-shadow:0 0 0 22px rgba(37,211,102,0)}}
+
+              /* ============ APPARITION AU DÉFILEMENT ============
+   Les éléments avec la classe "rv" apparaissent quand on arrive dessus (géré par script.js). */
+.rv{opacity:0;
+    transform:translateY(30px);
+    transition:1s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;
+    transform:none}
+
+            /* ============ TÉLÉPHONE (écrans étroits) ============ */
+@media(max-width:820px){
+  .hero{grid-template-columns:1fr;
+    text-align:center;padding-top:40px}
+  .hero p.lead{margin-inline:auto}
+  .hero .cta{justify-content:center}
+  .flock{grid-template-columns:1fr}
+  .about{grid-template-columns:1fr}
+  nav ul{display:none}          /* cache les liens du menu sur petit écran */
+}
+/* Pour les personnes qui ont désactivé les animations sur leur téléphone */
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;
+    transition:none!important}
+  .rv{opacity:1;
+    transform:none}
+}

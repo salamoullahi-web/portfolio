@@ -1,0 +1,82 @@
+/* ===== COMPOSANTS : boutons, cartes, barres, formulaire ===== */
+
+.bouton {
+  display: inline-block; padding: 12px 26px; border-radius: 6px;
+  font: inherit; font-weight: 700; text-decoration: none; cursor: pointer;
+  border: 2px solid var(--accent); background: var(--accent); color: var(--sur-accent);
+  transition: transform 0.2s, background 0.2s, color 0.2s;
+}
+.bouton:hover { transform: translateY(-3px); }
+.bouton-clair { background: transparent; color: var(--accent); }
+.bouton-clair:hover { background: var(--accent); color: var(--sur-accent); }
+
+#theme-bouton {
+  background: transparent; color: var(--texte); border: 1px solid var(--bordure);
+  padding: 7px 14px; border-radius: 20px; cursor: pointer; font-size: 0.85rem;
+}
+#theme-bouton:hover { border-color: var(--accent); }
+
+.badge {
+  display: inline-flex; align-items: center; gap: 8px; background: var(--accent2); color: #fff;
+  padding: 9px 16px; border-radius: 6px; font-weight: 700; font-size: 0.85rem; text-decoration: none;
+}
+.badge i { width: 8px; height: 8px; border-radius: 50%; background: #fff; }
+
+.reseaux a {
+  width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%;
+  border: 2px solid var(--accent); color: var(--accent);
+  transition: transform 0.25s, background 0.25s, color 0.25s, box-shadow 0.25s;
+}
+
+.reseaux a:hover { background: var(--accent); color: var(--sur-accent); box-shadow: 0 0 20px var(--lueur); transform: translateY(-5px) rotate(8deg); }
+.reseaux svg { width: 20px; height: 20px; }
+
+/* Barres de compétences */
+.niveau-tete { display: flex; justify-content: space-between; font-weight: 600; margin-bottom: 8px; }
+.barre { height: 10px; border-radius: 10px; background: var(--bordure); overflow: hidden; }
+.barre span {
+  display: block; height: 100%; width: var(--niveau); border-radius: 10px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  transition: width 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s;
+}
+
+/* Cartes de projets */
+.projet {
+  position: relative; overflow: hidden; flex: 1 1 280px;
+  display: flex; flex-direction: column; gap: 12px; padding: 26px;
+  background: var(--carte); border: 1px solid var(--bordure); border-radius: 14px;
+  transition: transform 0.2s ease-out, box-shadow 0.3s, border-color 0.3s;
+}
+.projet::before {
+  content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  transform: scaleX(0); transform-origin: left; transition: transform 0.4s;
+}
+.projet:hover { border-color: var(--accent); box-shadow: 0 0 30px var(--lueur); }
+.projet:hover::before { transform: scaleX(1); }
+.projet p { flex: 1; color: var(--discret); }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tags span { border: 1px solid var(--bordure); border-radius: 20px; padding: 2px 12px; font-size: 0.85rem; }
+
+/* Formulaire et cartes de contact */
+.formulaire { flex: 1 1 320px; display: flex; flex-direction: column; gap: 16px; }
+.formulaire label { display: flex; flex-direction: column; gap: 6px; font-size: 0.95rem; color: var(--discret); }
+.formulaire input, .formulaire textarea {
+  font: inherit; color: var(--texte); background: var(--carte);
+  border: 1px solid var(--bordure); border-radius: 6px; padding: 11px 14px;
+}
+.formulaire textarea { min-height: 130px; resize: vertical; }
+.formulaire input:focus, .formulaire textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.formulaire .bouton { align-self: flex-start; }
+.liens { flex: 1 1 280px; display: flex; flex-direction: column; gap: 12px; }
+
+.lien-carte {
+  display: flex; align-items: center; gap: 16px; padding: 16px 18px;
+  background: var(--carte); border: 1px solid var(--bordure); border-radius: 10px;
+  color: var(--texte); text-decoration: none; transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+.lien-carte:hover { transform: translateX(6px); border-color: var(--accent); box-shadow: 0 0 20px var(--lueur); }
+.lien-carte svg { width: 26px; height: 26px; flex: none; color: var(--accent); }
+.lien-carte span { display: flex; flex-direction: column; line-height: 1.3; overflow-wrap: anywhere; }
+.lien-carte small { color: var(--discret); }
+.liens .bouton { align-self: flex-start; margin-top: 8px; }

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Abdou Salam Diakhate – Développeur web</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/composants.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+         <canvas id="particules" aria-hidden="true"></canvas>
+         <div class="lueur" aria-hidden="true"></div>
+         <div class="progression" aria-hidden="true"></div>
+    <div class="cadre" id="accueil">
+    <header class="haut">
+     <a class="logo" href="#accueil">Abdou<span>Salam</span></a>
+       <nav>
+          <a class="actif" href="#accueil">Accueil</a>
+          <a href="#apropos">À propos</a>
+          <a href="#competences">Compétences</a>
+          <a href="#projets">Projets</a>
+          <a href="#contact">Contact</a>
+      </nav>
+      <div class="outils">
+        <button id="theme-bouton" type="button">Mode clair</button>
+        <a class="badge" href="#contact"><i></i>Disponible pour un stage</a>
+      </div>
+    </header>
+             <section class="hero">
+      <div class="photo-zone">
+        <img class="portrait" src="images/photo.jpg" alt="Portrait d’Abdou Salam Diakhate">
+      </div>
+      <div class="hero-texte">
+        <p class="salut">Bonjour, je suis</p>
+        <h1>Abdou Salam Diakhate</h1>
+        <p class="metier">Et je suis <span class="mot" id="mot">Développeur Front-end</span></p>
+        <p class="resume">Je crée des sites clairs, rapides et adaptés à tous les écrans avec HTML, CSS et JavaScript. Je cherche un stage pour progresser sur de vrais projets.</p>
+        <div class="reseaux">
+               <a href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="8,6 2,12 8,18"/><polyline points="16,6 22,12 16,18"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="8" y1="11" x2="8" y2="16"/><line x1="8" y1="8" x2="8" y2="8.01"/><path d="M12 16v-5m0 2a2.5 2.5 0 0 1 5 0v3"/></svg></a>
+          <a href="mailto:salamoullahi2@gmail.com" aria-label="E-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3,7 12,13 21,7"/></svg></a>
+          </div>
+          <div class="boutons">
+          <a class="bouton" href="#contact">Recrutez-moi</a>
+          <a class="bouton bouton-clair" href="#projets">Voir mes projets</a>
+        </div>
+            </div>
+    </section>
+             <div class="stats">
+      <div class="stat"><strong data-cible="3">0</strong><span>Projets réalisés</span></div>
+      <div class="stat"><strong data-cible="4">0</strong><span>Technologies utilisées</span></div>
+      <div class="stat"><strong data-cible="100" data-suffixe="%">0</strong><span>Responsive</span></div>
+      <div class="stat"><strong data-cible="1">0</strong><span>Objectif : un stage</span></div>
+    </div>
+  </div>
+         <div class="defile" aria-hidden="true">
+    <div class="piste">
+      <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Flexbox</span><span>Responsive</span><span>Animations</span>
+      <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Flexbox</span><span>Responsive</span><span>Animations</span>
+    </div>
+  </div>
+           <main>
+    <section class="bloc" id="apropos">
+      <div class="conteneur apropos">
+        <div class="apropos-texte">
+          <h2>À propos</h2>
+          <p>Je me forme au développement web et j’aime transformer une idée en page propre, lisible et agréable à utiliser.</p>
+          <p>Ce portfolio, que j’ai construit moi-même, rassemble mes premiers projets.</p>
+        </div>
+        <dl class="infos">
+          <div><dt>Formation</dt><dd>Développement web</dd></div>
+          <div><dt>Spécialité</dt><dd>Front-end</dd></div>
+          <div><dt>Je recherche</dt><dd>Un stage</dd></div>
+        </dl>
+      </div>
+    </section>
+   section class="bloc" id="competences">
+      <div class="conteneur">
+        <h2>Compétences</h2>
+        <div class="competences">
+<div class="niveau"><div class="niveau-tete"><span>HTML</span><span>90%</span></div><div class="barre"><span style="--niveau:90%"></span></div></div>
+          <div class="niveau"><div class="niveau-tete"><span>CSS</span><span>85%</span></div><div class="barre"><span style="--niveau:85%"></span></div></div>
+          <div class="niveau"><div class="niveau-tete"><span>Flexbox</span><span>85%</span></div><div class="barre"><span style="--niveau:85%"></span></div></div>
+          <div class="niveau"><div class="niveau-tete"><span>Design responsive</span><span>80%</span></div><div class="barre"><span style="--niveau:80%"></span></div></div>
+          <div class="niveau"><div class="niveau-tete"><span>Animations CSS</span><span>75%</span></div><div class="barre"><span style="--niveau:75%"></span></div></div>
+          <div class="niveau"><div class="niveau-tete"><span>JavaScript (bases)</span><span>45%</span></div><div class="barre"><span style="--niveau:45%"></span></div></div>
+        </div>
+      </div>
+    </section>
+        <section class="bloc" id="projets">
+      <div class="conteneur">
+        <h2>Projets</h2>
+        <div class="projets">
+          <article class="projet">
+            <h3>Mon portfolio</h3>
+            <p>Le site que vous visitez : mise en page en Flexbox, animations CSS, particules et mode clair en JavaScript.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <a class="bouton bouton-clair" href="projets/mon-portfolio/index.html">Voir le projet</a>
+          </article>
+        <article class="projet">
+            <h3>Site de Boutique asd</h3>
+            <p>Un site de trois pages avec la carte, les horaires et un formulaire de contact.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span></div>
+            <a class="bouton bouton-clair" href="projet/ASD_BOUTIQUE/">Voir le projet</a>
+          </article>
+    <article class="projet">
+            <h3>site vitrine</h3>
+            <p>site vitrine d'un boutique de maillots de foot et des tshirts otaku</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>Flexbox</span></div>
+            <a class="bouton bouton-clair" href="projet/site-vitrine/index.html">Voir le projet</a>
+          </article>
+        </div>
+      </div>
+    </section>
+         
+        <section class="bloc contact" id="contact">
+      <div class="conteneur">
+        <h2>Travaillons ensemble</h2>
+        <p class="intro">Une question, une offre de stage ou un projet ? Écrivez-moi avec le formulaire ou par l’un des liens.</p>
+    div class="contact-grille">
+          <form class="formulaire" id="formulaire">
+            <label>Votre nom
+              <input type="text" name="nom" required autocomplete="name">
+            </label>
+ <label>Votre e-mail
+              <input type="email" name="email" required autocomplete="email">
+            </label>
+            <label>Votre message
+              <textarea name="message" required></textarea>
+            </label>
+            <button class="bouton" type="submit">Envoyer le message</button>
+          </form>
+           <div class="liens">
+            <a class="lien-carte" href="mailto:salamoullahi2@gmail.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3,7 12,13 21,7"/></svg>
+              <span>E-mail<small>salamoullahi2@gmail.com</small></span>
+            </a>
+            <a class="lien-carte" href="#">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="8,6 2,12 8,18"/><polyline points="16,6 22,12 16,18"/></svg>
+              <span>GitHub<small>Ajoute ton lien ici</small></span>
+            </a>
+            <a class="lien-carte" href="#">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="8" y1="11" x2="8" y2="16"/><line x1="8" y1="8" x2="8" y2="8.01"/><path d="M12 16v-5m0 2a2.5 2.5 0 0 1 5 0v3"/></svg>
+              <span>LinkedIn<small>Ajoute ton lien ici</small></span>
+            </a>
+            <button id="copier" class="bouton bouton-clair" type="button">Copier l’e-mail</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+ <footer class="pied">© <span id="annee"></span> Abdou Salam Diakhate</footer>
+
+  <script src="js/script.js"></script>
+</body> 
+</html>

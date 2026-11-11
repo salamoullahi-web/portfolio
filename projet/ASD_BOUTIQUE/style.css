@@ -1,0 +1,509 @@
+/* ===== VARIABLES ===== */
+
+:root {
+  --fonce: #1a1a2e;
+  --jaune: #ffcc00;
+  --rouge: #cc0000;
+  --gris: #f5f5f5;
+  --blanc: #ffffff;
+  --vert: #25d366;
+  /* ===== STYLE GENERAL ===== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--gris);
+  color: #222222;
+  margin: 0;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: #0066cc;
+}
+
+img {
+  max-width: 100%;
+}
+
+h2,
+h3,
+h4 {
+  color: var(--fonce);
+}
+/* ===== HEADER ET MENU ===== */
+
+header {
+  background-color: var(--fonce);
+  padding: 20px;
+  text-align: center;
+  border-bottom: 4px solid var(--jaune);
+}
+
+header h1 {
+  color: var(--blanc);
+  margin: 0 0 15px 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin: 5px 12px;
+}
+
+nav a {
+  color: var(--blanc);
+  font-weight: bold;
+  padding: 8px 4px;
+  border-bottom: 3px solid transparent;
+}
+
+nav a:hover {
+  color: var(--jaune);
+  border-bottom-color: var(--jaune);
+}
+/* ===== BOUTONS ===== */
+
+.bouton,
+button {
+  display: inline-block;
+  background-color: var(--fonce);
+  color: var(--blanc);
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.bouton:hover,
+button:hover {
+  background-color: var(--jaune);
+  color: var(--fonce);
+}
+
+.bouton-whatsapp {
+  background-color: var(--vert);
+  color: var(--blanc);
+}
+
+.bouton-whatsapp:hover {
+  background-color: #1da851;
+  color: var(--blanc);
+}
+
+.bouton-clair {
+  background-color: var(--blanc);
+  color: var(--fonce);
+  border: 2px solid var(--fonce);
+}
+
+/* ===== MISE EN PAGE ===== */
+
+.liste {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* ===== PAGE D'ACCUEIL ===== */
+
+.banniere {
+  display: block;
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.categories,
+.nouveautes,
+.avantages,
+.adresse {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.categorie {
+  display: block;
+  width: 300px;
+  padding: 40px 20px;
+  border-radius: 10px;
+  color: var(--blanc);
+}
+
+.categorie h3 {
+  color: var(--blanc);
+  margin: 0 0 10px 0;
+  font-size: 24px;
+}
+
+.categorie p {
+  margin: 0;
+}
+
+.categorie-clubs {
+  background-color: var(--fonce);
+}
+
+.categorie-nations {
+  background-color: var(--rouge);
+}
+
+.categorie:hover {
+  opacity: 0.85;
+}
+
+.avantages {
+  background-color: var(--blanc);
+}
+
+.avantage {
+  width: 260px;
+  padding: 20px;
+  background-color: var(--gris);
+  border-top: 4px solid var(--jaune);
+  border-radius: 5px;
+}
+
+.adresse p {
+  margin: 5px 0 15px 0;
+}
+
+.retour {
+  text-align: center;
+}
+
+/* ===== CARTES MAILLOTS ===== */
+
+.maillot {
+  width: 250px;
+  background-color: var(--blanc);
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s;
+}
+
+.maillot:hover {
+  transform: translateY(-5px);
+}
+
+.maillot img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.maillot h3,
+.maillot h4 {
+  margin: 10px 0 5px 0;
+}
+
+.prix-carte {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--rouge);
+  margin: 5px 0 12px 0;
+}
+
+.maillot a {
+  display: inline-block;
+  background-color: var(--fonce);
+  color: var(--blanc);
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.maillot a:hover {
+  background-color: var(--jaune);
+  color: var(--fonce);
+}
+
+/* ===== PAGE PRODUITS ===== */
+
+.titre-page {
+  text-align: center;
+  font-size: 32px;
+  margin: 30px 0 10px 0;
+}
+
+.clubs,
+.equipes-nationales {
+  text-align: center;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.clubs {
+  background-color: #e8f0fe;
+}
+
+.equipes-nationales {
+  background-color: #fff3d6;
+}
+
+/* ===== PAGES DE DETAIL ===== */
+
+.detail,
+.panier,
+.contact {
+  background-color: var(--blanc);
+  margin: 25px auto;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.detail {
+  max-width: 1000px;
+}
+
+.panier {
+  max-width: 900px;
+}
+
+.contact {
+  max-width: 650px;
+}
+
+.detail-contenu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.detail-image {
+  flex: 1 1 350px;
+  margin: 0;
+}
+
+.detail-image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.detail-infos {
+  flex: 1 1 350px;
+}
+
+.detail-infos h2 {
+  margin-top: 0;
+}
+
+.prix {
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--rouge);
+  margin: 0 0 15px 0;
+}
+
+.detail label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.detail select,
+.detail input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* ===== PANIER ===== */
+
+.tableau-defilant {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 12px;
+  border: 1px solid #cccccc;
+  text-align: center;
+}
+
+thead th {
+  background-color: var(--fonce);
+  color: var(--blanc);
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f0f0f0;
+}
+
+tfoot th,
+tfoot td {
+  background-color: var(--jaune);
+  font-weight: bold;
+}
+
+.actions-panier {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+/* ===== CONTACT ===== */
+
+.contact h2 {
+  text-align: center;
+}
+
+.contact-infos {
+  background-color: var(--gris);
+  padding: 15px 20px;
+  border-left: 4px solid var(--jaune);
+  border-radius: 5px;
+  margin-bottom: 25px;
+}
+
+.contact-infos p {
+  margin: 0 0 10px 0;
+}
+
+.contact label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.contact input[type="text"],
+.contact input[type="email"],
+.contact select,
+.contact textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+}
+
+.contact input:focus,
+.contact select:focus,
+.contact textarea:focus {
+  border-color: var(--fonce);
+  outline: none;
+}
+
+.contact input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+.contact input[type="checkbox"] + label {
+  display: inline;
+  font-weight: normal;
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+  background-color: var(--fonce);
+  color: var(--blanc);
+  text-align: center;
+  padding: 25px 20px;
+  margin-top: 30px;
+  border-top: 4px solid var(--jaune);
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+footer a {
+  color: var(--jaune);
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ===== TELEPHONE ===== */
+
+@media (max-width: 600px) {
+
+  header h1 {
+    font-size: 22px;
+  }
+
+  nav li {
+    margin: 5px 8px;
+  }
+
+  .banniere {
+    height: 180px;
+  }
+
+  .maillot,
+  .categorie,
+  .avantage {
+    width: 100%;
+  }
+
+  .maillot img {
+    height: auto;
+  }
+
+  .clubs,
+  .equipes-nationales {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .detail,
+  .panier,
+  .contact {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  .actions-panier {
+    flex-direction: column;
+  }
+
+  .actions-panier .bouton {
+    text-align: center;
+  }
+
+  th,
+  td {
+    padding: 8px;
+    font-size: 14px;
+  }
+}
